@@ -1,22 +1,34 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
+from sqlalchemy.orm import Session
+from app.database import get_db
+from app.models import Task
 
 app = FastAPI()
 
 @app.post("/tasks")
-def create_tasks():
+def create_tasks(db: Session = Depends(get_db)):
+    task = Task(
+        title="Ma première tâche",
+        description="Test de connexion PostgreSQL",
+        status="todo"
+    )
+
+    db.add(task)
+    db.commit()
+    db.refresh(task)
+
     return {
-        "title": "titleexample",
-        "description": "descriptionexample",
-        "status": "statusexample"
+        "id": task.id,
+        "title": task.title,
+        "description": task.description,
+        "status": task.status
     }
 
 @app.get("/tasks")
-def get_tasks():
-    return {
-        "title": "titleexample",
-        "description": "descriptionexample",
-        "status": "statusexample"
-    }
+def get_tasks(db: Session = Depends(get_db)):
+    tasks = db.query(Task).all()
+
+    return tasks
 
 @app.get("/")
 def root():
