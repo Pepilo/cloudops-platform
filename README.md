@@ -17,33 +17,33 @@ Rather than studying each technology independently, I aim to combine them in a r
 
 ## Technology Stack
 
-Domain                     Technology
+Domain |                      Technology
 
-Cloud                       Azure
-Operating System            Ubuntu Server LTS
-Configuration Management    Ansible
-Container Runtime           containerd
-Orchestration               Kubernetes
-Kubernetes Installation     kubeadm
-CLI                         kubectl
-CNI                         Calico
-API                         Python / FastAPI
-Database                    PostgreSQL
-Containerization            Docker
-CI/CD                       GitHub Actions
-Container Registry          GitHub Container Registry 
-Testing                     Pytest
-Monitoring                  Prometheus / Grafana
-Version Control             Git / GitHub
+Cloud |                       Azure \
+Operating System |            Ubuntu Server LTS \
+Configuration Management |    Ansible \
+Container Runtime |           containerd \
+Orchestration |               Kubernetes \
+Kubernetes Installation |     kubeadm \
+CLI |                         kubectl \
+CNI |                         Calico \
+API |                         Python / FastAPI \
+Database |                    PostgreSQL \
+Containerization |            Docker \
+CI/CD |                       GitHub Actions \
+Container Registry |          GitHub Container Registry \
+Testing |                     Pytest \
+Monitoring |                  Prometheus / Grafana \
+Version Control |             Git / GitHub
 
 ## Repository Structure
-cloudops-platform/
-├── application/
-├── docker/
-├── ansible/
-├── kubernetes/
-├── .github/
-│   └── workflows/
+cloudops-platform/ \
+├── application/ \
+├── docker/ \
+├── ansible/ \
+├── kubernetes/ \
+├── .github/ \
+│   └── workflows/ \
 └── docs/
 
 ## Getting Started
