@@ -1,9 +1,12 @@
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
-from app.database import get_db
+from app.database import get_db, engine, Base
+from app import models
 from app.models import Task
 
 app = FastAPI()
+
+Base.metadata.create_all(bind=engine)
 
 @app.post("/tasks")
 def create_tasks(db: Session = Depends(get_db)):
